@@ -131,7 +131,7 @@ def extract_channels(html_string):
             channel_name = channel_name_elem[0].text_content().strip()
         else:
             channel_name = ""
-            print(f"警告: 在div中未找到频道名称元素")
+            # print(f"警告: 在div中未找到频道名称元素")
         
         # 提取频道URL（从m3u8表格中）
         url_elem = div.xpath('.//td[contains(text(), "http://")]')
@@ -139,7 +139,7 @@ def extract_channels(html_string):
             channel_url = url_elem[0].text_content().strip()
         else:
             channel_url = ""
-            print(f"警告: 在div中未找到URL元素")
+            # print(f"警告: 在div中未找到URL元素")
         
         if channel_name and channel_url:
             extracted_channels.append({
@@ -148,7 +148,8 @@ def extract_channels(html_string):
             })
             # print(f"提取到频道: {channel_name} -> {channel_url}")
         else:
-            print(f"警告: 在div中找到了元素，但名称或URL为空。")
+            pass
+            # print(f"警告: 在div中找到了元素，但名称或URL为空。")
     
     return extracted_channels
 
@@ -244,6 +245,7 @@ def main(urls_template ,max_page ,output_file):
                             wait(3,6)
                             iptv_url = get_detail_info(url,ip,tk,p)
                             iptv_urls_lists = iptv_urls_lists + iptv_url
+                            print("当前获取的频道数量:",len(iptv_urls_lists))
                             
                         except Exception as e:
                             print('err2: '+ str(e))
@@ -269,9 +271,6 @@ def main(urls_template ,max_page ,output_file):
 
 
 if __name__ == "__main__":
-    
-    
-    
     urls=[
         "http://foodieguide.com/iptvsearch/iptvhotel.php?page={page}&iphone16=&code=",
         "http://foodieguide.com/iptvsearch/iptvmulticast.php?page={page}&iphone16=&code="
