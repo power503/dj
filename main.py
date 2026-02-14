@@ -8,9 +8,7 @@ Created on Wed Jan 28 17:20:46 2026
 import requests,time,random
 from lxml import html
 from datetime import datetime
-
-
-
+from urllib.parse import urlparse, parse_qs
 
 
 
@@ -247,12 +245,12 @@ def main(urls_template,max_page):
                             iptv_url = get_detail_info(url,ip,tk,p)
                             iptv_urls_lists = iptv_urls_lists + iptv_url
                             
-                        except Exception:
-                            print('error1')
+                        except Exception as e:
+                            print('err2: '+ str(e))
 
                 
-            except Exception:
-                print('error2')
+            except Exception as e:
+                print('err1: '+ str(e))
     
     print("\n\n获取的频道列表:",iptv_urls_lists)
     
@@ -274,12 +272,10 @@ if __name__ == "__main__":
     
     
     
-    urls_template=[
-        "http://foodieguide.com/iptvsearch/iptvhotel.php?page=1&iphone16=&code=",
-        "http://foodieguide.com/iptvsearch/iptvmulticast.php?page=1&iphone16=&code="
+    urls=[
+        "http://foodieguide.com/iptvsearch/iptvhotel.php?page={page}&iphone16=&code=",
+        "http://foodieguide.com/iptvsearch/iptvmulticast.php?page={page}&iphone16=&code="
         ]
-    
-    
     
     max_page = 15
     
