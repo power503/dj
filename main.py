@@ -259,7 +259,11 @@ def main(urls_template ,max_page ,output_file):
     print("\n\n获取的频道数量:",len(iptv_urls_lists))
     
     
-    myip = requests.get('http://httpbin.org/ip').json().get("origin","")
+    myip='unknown'
+    try:
+        myip = requests.get('http://httpbin.org/ip').json().get("origin","")
+    except Exception:
+        pass
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write(f"# created at {datetime.now().strftime('%Y-%m-%d_%H%M%S')} ip:{myip}\n")
