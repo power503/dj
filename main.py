@@ -202,7 +202,7 @@ def wait(a,b):
     print(f'等待{w}秒...')
     time.sleep(w)
 
-def main(urls_template,max_page):
+def main(urls_template ,max_page ,output_file):
     
     headers = {
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
@@ -252,14 +252,15 @@ def main(urls_template,max_page):
             except Exception as e:
                 print('err1: '+ str(e))
     
-    print("\n\n获取的频道列表:",iptv_urls_lists)
+    # print("\n\n获取的频道列表:",iptv_urls_lists)
     
     print("\n\n获取的频道数量:",len(iptv_urls_lists))
     
+    
     myip = requests.get('http://httpbin.org/ip').json().get("origin","")
 
-    with open('live.txt', 'w', encoding='utf-8') as f:
-        f.write(f"# created at {datetime.now().strftime('%Y-%m-%d_%H%M%S')}  ip:{myip}\n")
+    with open(output_file, 'w', encoding='utf-8') as f:
+        f.write(f"# created at {datetime.now().strftime('%Y-%m-%d_%H%M%S')} ip:{myip}\n")
         for item in iptv_urls_lists:
             f.write(f"{item['name']},{item['url']}\n")
 
@@ -276,9 +277,11 @@ if __name__ == "__main__":
         "http://foodieguide.com/iptvsearch/iptvmulticast.php?page={page}&iphone16=&code="
         ]
     
-    max_page = 15
+    max_page = 1
     
-    main(urls,max_page)
+    output_file="live.txt"
+    
+    main(urls, max_page, output_file)
     
     
     
