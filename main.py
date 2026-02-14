@@ -256,11 +256,10 @@ def main(urls_template,max_page):
     
     print("\n\n获取的频道数量:",len(iptv_urls_lists))
     
-    
-
+    myip = requests.get('http://httpbin.org/ip').json().get("origin","")
 
     with open('live.txt', 'w', encoding='utf-8') as f:
-        f.write(f"# created at {datetime.now().strftime('%Y%m%d_%H%M%S')}\n")
+        f.write(f"# created at {datetime.now().strftime('%Y-%m-%d_%H%M%S')}  ip:{myip}\n")
         for item in iptv_urls_lists:
             f.write(f"{item['name']},{item['url']}\n")
 
