@@ -280,7 +280,7 @@ if __name__ == "__main__":
         "http://foodieguide.com/iptvsearch/iptvmulticast.php?page={page}&iphone16=&code="
         ]
     
-    max_page = 1
+    max_page = 18
     
     output_file="live.txt"
     
