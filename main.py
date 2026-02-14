@@ -7,6 +7,10 @@ Created on Wed Jan 28 17:20:46 2026
 
 import requests,time,random
 from lxml import html
+from datetime import datetime
+
+
+
 
 
 
@@ -258,6 +262,7 @@ def main(urls_template,max_page):
 
 
     with open('live.txt', 'w', encoding='utf-8') as f:
+        f.write(f"# created at {datetime.now().strftime('%Y%m%d_%H%M%S')}\n")
         for item in iptv_urls_lists:
             f.write(f"{item['name']},{item['url']}\n")
 
@@ -267,11 +272,13 @@ def main(urls_template,max_page):
 
 if __name__ == "__main__":
     
-
+    
+    
     urls_template=[
         "http://foodieguide.com/iptvsearch/iptvhotel.php?page=1&iphone16=&code=",
         "http://foodieguide.com/iptvsearch/iptvmulticast.php?page=1&iphone16=&code="
         ]
+    
     
     
     max_page = 15
