@@ -266,7 +266,7 @@ def main(urls_template ,max_page ,output_file):
         pass
 
     with open(output_file, 'w', encoding='utf-8') as f:
-        f.write(f"# created at {datetime.now().strftime('%Y-%m-%d_%H%M%S')} ip:{myip}\n")
+        f.write(f"# created at {datetime.now().strftime('%Y-%m-%d_%H%M%S')} \n# ip:{myip}\n")
         for item in iptv_urls_lists:
             f.write(f"{item['name']},{item['url']}\n")
 
