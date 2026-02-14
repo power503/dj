@@ -205,6 +205,8 @@ def wait(a,b):
 
 def main(urls_template ,max_page ,output_file):
     
+    time1 = datetime.now().strftime('%Y-%m-%d_%H%M%S')
+    
     headers = {
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
         "Accept-Language": "zh-CN,zh;q=0.9",
@@ -258,6 +260,8 @@ def main(urls_template ,max_page ,output_file):
     
     print("\n\n获取的频道数量:",len(iptv_urls_lists))
     
+    time2 = datetime.now().strftime('%Y-%m-%d_%H%M%S')
+    
     
     myip='unknown'
     try:
@@ -266,7 +270,7 @@ def main(urls_template ,max_page ,output_file):
         pass
 
     with open(output_file, 'w', encoding='utf-8') as f:
-        f.write(f"# created at {datetime.now().strftime('%Y-%m-%d_%H%M%S')} \n# ip:{myip}\n")
+        f.write(f"# created at {time2} \n# ip:{myip}\n# run start at :{time1}\n# end at : {time2} \n")
         for item in iptv_urls_lists:
             f.write(f"{item['name']},{item['url']}\n")
 
