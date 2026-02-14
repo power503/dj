@@ -3,7 +3,9 @@ name: every day
 on:
   schedule:
     - cron: '2 14 * * *'
-
+  workflow_dispatch:
+    branches:
+      - main
 permissions:
   contents: write
   
