@@ -30,7 +30,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install requests,lxml
+        pip install requests lxml
 
     - name: Run Python script
       run: python main.py
