@@ -2,10 +2,7 @@ name: every day
 
 on:
   schedule:
-    - cron: '2 2 * * *'
-  workflow_dispatch:
-    branches:
-      - main
+    - cron: '2 14 * * *'
 
 permissions:
   contents: write
