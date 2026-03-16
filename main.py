@@ -269,7 +269,9 @@ def main(urls_template ,max_page ,output_file):
     except Exception:
         pass
 
-    with open(output_file, 'w', encoding='utf-8') as f:
+    if len(iptv_urls_lists) > 0 :
+        
+        with open(output_file, 'w', encoding='utf-8') as f:
         f.write(f"# created at {time2} \n# ip:{myip}\n# run start at :{time1}\n# end at : {time2} \n")
         for item in iptv_urls_lists:
             f.write(f"{item['name']},{item['url']}\n")
