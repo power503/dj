@@ -32,7 +32,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install os requests lxml pycryptodome
+        pip install os requests
 
     - name: Run Python script
       env:
