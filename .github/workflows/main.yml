@@ -32,10 +32,12 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install requests lxml
+        pip install requests lxml pycryptodome
+
+    
 
     - name: Run Python script
-      run: python main.py
+      run: python decrypted_gitee_file.py
   
     - name: Commit and push changes
       run: |
