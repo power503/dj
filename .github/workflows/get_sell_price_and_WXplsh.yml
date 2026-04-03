@@ -1,8 +1,8 @@
-name: every day
+name: get_sell_price_and_WXplsh
 
 on:
   schedule:
-    - cron: '2 14 * * *'
+    - cron: '9 26 * * *'
   workflow_dispatch:
     branches:
       - main
@@ -35,18 +35,15 @@ jobs:
         pip install requests lxml pycryptodome
 
     - name: Run Python script
-      run: python main.py
-
-    - name: Run Python script
-      run: python decrypted_gitee_file.py
+      env:
+        pushplus_TOKEN: ${{ secrets.pushplus_TOKEN }}
+      run: python get_sell_price_and_WXpush.py
   
     - name: Commit and push changes
       run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add live.txt
-          git add live_github.txt
-          git add live_giteee.txt
+          git add gitee_stock_result.log
           git diff --quiet && git diff --staged --quiet || git commit -m "Auto-update live.txt"
           git push
 
