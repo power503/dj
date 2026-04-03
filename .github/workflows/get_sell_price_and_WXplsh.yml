@@ -37,7 +37,7 @@ jobs:
     - name: Run Python script
       env:
         pushplus_TOKEN: ${{ secrets.pushplus_TOKEN }}
-      run: python get_sell_price_and_WXpush.py
+      run: python test.py
   
     - name: Commit and push changes
       run: |
