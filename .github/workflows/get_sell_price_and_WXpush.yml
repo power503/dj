@@ -36,7 +36,7 @@ jobs:
 
     - name: Run Python script
       env:
-        pushplus_TOKEN: ${{ secrets.pushplus_TOKEN }}
+        pushplus_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
       run: python test.py
   
     - name: Commit and push changes
