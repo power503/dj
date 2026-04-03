@@ -1,4 +1,4 @@
-name: get_sell_price_and_WXplsh
+name: get_sell_price_and_WXpush
 
 on:
   schedule:
