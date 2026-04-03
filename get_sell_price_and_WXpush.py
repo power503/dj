@@ -86,7 +86,7 @@ print(r)
 current_time_sec = time.time()
 target_time_sec = int(r.get('unix_time',0)) / 1000
 
-# 目标时间是北京时间，要转换为美国时间（UTC+0），即减去8个小时的时间，单位换算成为秒
+# 得到的target_time_sec目标时间是北京时间，要转换为美国时间（UTC+0），即减去8个小时的时间，单位换算成为秒
 target_time_sec =  target_time_sec - ( 8 * 60 * 60)
 
 
