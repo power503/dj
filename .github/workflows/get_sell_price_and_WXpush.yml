@@ -46,6 +46,3 @@ jobs:
           git add gitee_stock_result.log
           git diff --quiet && git diff --staged --quiet || git commit -m "Auto-update live.txt"
           git push
-
-    env:
-      TZ: Asia/Shanghai
