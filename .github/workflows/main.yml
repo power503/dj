@@ -34,7 +34,8 @@ jobs:
       run: |
         pip install requests lxml pycryptodome
 
-    
+    - name: Run Python script
+      run: python main.py
 
     - name: Run Python script
       run: python decrypted_gitee_file.py
