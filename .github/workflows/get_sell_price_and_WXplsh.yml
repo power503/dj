@@ -2,7 +2,7 @@ name: get_sell_price_and_WXplsh
 
 on:
   schedule:
-    - cron: '9 26 * * *'
+    - cron: '26 1 * * *'
   workflow_dispatch:
     branches:
       - main
