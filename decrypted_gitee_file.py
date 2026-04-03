@@ -2,7 +2,7 @@
 """
 Created on Fri Apr  3 10:10:22 2026
 
-@author: Yudaji
+@author: ...
 """
 
 # pip install pycryptodome
