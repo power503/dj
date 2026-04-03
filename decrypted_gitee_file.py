@@ -40,8 +40,8 @@ def aes_ecb_decrypt(ciphertext_b64: str, key: str) -> str:
 
 def get_content(url,save_name):
     
-    # 16字节的密钥，对应 AES-128
-    my_key = "cb745bb440731e3e" # 自用数据，key可公开，在gitee上进行aes加密数据只是为了不被和谐掉，个人得到这个key也没啥用处。。。
+    # 32字节的密钥，对应 AES-256
+    my_key = "cd058fc99ba36f2ecdbea979a63b87b9" # 自用数据，key可公开，在gitee上进行aes加密,只是为了不被和谐，个人得到这个key也没啥用处。。。
     my_encrypted_data = requests.get(url).text
 
     # print(f"原始数据: {my_encrypted_data}")
