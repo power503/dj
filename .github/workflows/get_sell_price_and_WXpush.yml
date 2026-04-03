@@ -32,7 +32,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install os requests
+        pip install requests
 
     - name: Run Python script
       env:
