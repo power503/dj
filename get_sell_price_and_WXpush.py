@@ -17,6 +17,10 @@ def write_log(msg):
         cst_now = utc_now + timedelta(hours=8)  # 变成 UTC+8 的 naive 时间
         f_txt.write(f"{cst_now}：{msg}\n")
 
+
+write_log(time.time())
+write_log(datetime.now())
+
 def send_msg(numbers):
     # numbers = 【代码，名称，现价】
     
